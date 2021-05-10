@@ -97,6 +97,8 @@ namespace DogsAndPeoples
             var command = new SqlCommand(sql, conexao);
             command.Parameters.Add("@Id", SqlDbType.Int).Value = int.Parse(textBoxId.Text);
             command.ExecuteNonQuery();
+            textBoxId.Text = string.Empty;
+            textBoxNome.Text = string.Empty;
 
             MessageBox.Show("Dono excluído com sucesso.");
         }
